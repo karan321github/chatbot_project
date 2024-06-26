@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Router, Routes } from "react-router-dom";
-import SingUp from "./assets/pages/SingUp";
-import Home from "./assets/pages/Home";
-import SignIn from "./assets/pages/SignIn";
+import SingUp from "./pages/SingUp";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
 
 const App = () => {
   return (
