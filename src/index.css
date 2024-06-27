@@ -3,7 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-    font-family: "poppins", sans-serif;
+* {
+  font-family: "poppins", sans-serif;
 }
+
+/* .gradient-bg {
+  background: linear-gradient(to bottom, black, red 80%);
+  transition: background 0.3s ease;
+}
+
+.gradient-bg:hover {
+  background: linear-gradient(to bottom, black, red 80%);
+} */
