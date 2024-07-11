@@ -1,0 +1,57 @@
+.chatSectionWrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.sidePanelWrapper {
+  width: 300px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+}
+
+.sidePanel {
+  padding: 20px;
+}
+
+.newConversation button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.existingConversation {
+  margin-top: 20px;
+}
+
+.existingConversationList {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.existingConversationBody {
+  padding: 10px 0;
+}
+
+.line {
+  margin: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.filesSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filesList {
+  list-style: none;
+  padding: 0;
+}
+
+.fileItem {
+  padding: 5px 0;
+}
