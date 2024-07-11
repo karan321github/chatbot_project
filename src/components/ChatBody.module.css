@@ -1,0 +1,81 @@
+.chatBodyWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.chatBody {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  margin-bottom: 60px; /* Ensure space for the fixed input section */
+}
+
+.chatBody h1 {
+  margin-bottom: 20px;
+}
+
+.chatSuggestion {
+  margin-top: 20px;
+  /* Add styles for chat suggestions */
+}
+
+.inputSection {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.attachButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.attachButton img {
+  width: 24px;
+  height: 24px;
+}
+
+.sendButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sendButton:hover {
+  background-color: #0056b3;
+}
