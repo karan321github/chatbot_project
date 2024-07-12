@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ChatBody.module.css";
 import { LuSend } from "react-icons/lu";
 import { IoIosAttach } from "react-icons/io";
@@ -9,10 +8,12 @@ const ChatBody = () => {
       <div className={styles.chatBody}>
         <h1>Thanks for trying Tx GPT</h1>
 
-        <div className={styles.chatSuggestion}>{/* Chat suggestions */}
-          <div></div>
+        {/* Chat suggestions */}
+        <div className={styles.chatSuggestion}>
+          <div className={styles.chatBox}>Suggestion-2</div>
+          <div>Suggestion-3</div>
+          <div>Suggestion-4</div>
         </div>
-
       </div>
       <div className={styles.inputSection}>
         <textarea
@@ -21,10 +22,10 @@ const ChatBody = () => {
         ></textarea>
         <div className={styles.buttonSection}>
           <button className={styles.attachButton}>
-            <IoIosAttach color="white" />
+            <IoIosAttach color="white" size="20px"  />
           </button>
           <button className={styles.sendButton}>
-            <LuSend color="white" size="20px" />
+            <LuSend color="white" size="21px" />
           </button>
         </div>
       </div>
