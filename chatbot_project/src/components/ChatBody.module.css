@@ -1,0 +1,95 @@
+.chatBodyWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.chatBody {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  margin-bottom: 60px; /* Ensure space for the fixed input section */
+}
+
+.chatBody h1 {
+  margin-bottom: 20px;
+}
+
+.chatSuggestion {
+  margin-top: 20px;
+  /* Add styles for chat suggestions */
+}
+
+.inputSection {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.textarea {
+  flex: 1;
+  padding: 0;
+  border: none;
+  border-radius: 20px 0 0 20px; /* Rounded corners on the left side */
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  height: 40px; /* Adjust height as needed */
+  padding-left: 10px; /* Add some padding inside the textarea */
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+}
+
+.attachButton {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0 20px 20px 0; /* Rounded corners on the right side */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sendButton {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px; /* Fully rounded */
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* Same height as textarea */
+}
+
+.sendButton:hover {
+  background-color: #333;
+}
+
+.attachButton img,
+.sendButton img {
+  width: 24px;
+  height: 24px;
+}
