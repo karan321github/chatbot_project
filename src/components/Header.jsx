@@ -1,25 +1,34 @@
-import React from "react";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className={styles.txHeader}>
-      <Link className={styles.txLogo}>
-        <img src="logo.png" alt="Logo" />
-      </Link>
+    <header className={styles.txHeader}>
+      <div className={styles.txLogo}>
+        <Link to="/">
+          <img src="logo.png" alt="Logo" />
+        </Link>
+      </div>
       <nav className={styles.txNav}>
-        <Link href="/">
-          <img src="home-icon.png" alt="Home" />
-        </Link>
-        <Link href="/about">
-          <img src="about-icon.png" alt="About" />
-        </Link>
-        <Link href="/contact">
-          <img src="contact-icon.png" alt="Contact" />
-        </Link>
+        <ul className={styles.txNavList}>
+          <li>
+            <Link to="/">
+              <img src="home-icon.png" alt="Home" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">
+              <img src="about-icon.png" alt="About" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact">
+              <img src="contact-icon.png" alt="Contact" />
+            </Link>
+          </li>
+        </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
