@@ -1,0 +1,33 @@
+.txHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eedfdf;
+  color: #000; /* Changed to black for better visibility */
+}
+
+.txLogo img {
+  height: 40px;
+}
+
+.txNav {
+  display: flex;
+  align-items: center;
+}
+
+.txNavList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.txNavList li {
+  margin-left: 20px;
+}
+
+.txNav img {
+  height: 24px;
+  width: 24px;
+}
