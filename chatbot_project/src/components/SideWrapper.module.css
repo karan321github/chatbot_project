@@ -1,6 +1,18 @@
 .chatSectionWrapper {
   display: flex;
   height: 100vh;
+  transition: transform 0.3s ease;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.closed {
+  transform: translateX(-100%);
+}
+
+.GiHamburgerMenu {
 }
 
 .sidePanelWrapper {
@@ -14,6 +26,7 @@
 }
 
 .newConversation button {
+  margin-top: 1rem;
   width: 100%;
   padding: 10px;
   background-color: #007bff;
