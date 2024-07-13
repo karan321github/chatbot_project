@@ -22,10 +22,10 @@ const ChatBody = () => {
         ></textarea>
         <div className={styles.buttonSection}>
           <button className={styles.attachButton}>
-            <IoIosAttach color="white" size="20px"  />
+            <LuSend color="white" size="21px" />
           </button>
           <button className={styles.sendButton}>
-            <LuSend color="white" size="21px" />
+            <IoIosAttach color="white" size="22px" />
           </button>
         </div>
       </div>
