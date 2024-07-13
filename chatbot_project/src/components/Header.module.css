@@ -1,16 +1,23 @@
 .txHeader {
   display: flex;
+  position: absolute;
+  left: 300px;
+  width: -webkit-fill-available;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #eedfdf;
-  color: #000; 
+  color: #000;
+  transition: left 0.3s ease;
+}
+
+.shiftedHeader {
+  left: 0;
 }
 
 .txLogo {
   display: flex;
   align-items: center;
-  
 }
 
 .txLogo img {
@@ -21,7 +28,7 @@
   padding: 0.1rem;
 }
 
-.txLogo h1{
+.txLogo h1 {
   margin-left: 1rem;
 }
 

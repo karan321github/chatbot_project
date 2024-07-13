@@ -2,14 +2,16 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { GiTalk } from "react-icons/gi";
 import { FaCircleUser } from "react-icons/fa6";
-import { GiHamburgerMenu } from "react-icons/gi";
 import txLogo from "../assets/tx_logo.jpeg";
 
-const Header = () => {
+const Header = ({ isSideWrapperOpen }) => {
   return (
-    <header className={styles.txHeader}>
+    <header
+      className={`${styles.txHeader} ${
+        isSideWrapperOpen ? styles.shiftedHeader : ""
+      }`}
+    >
       <div className={styles.txLogo}>
-        <GiHamburgerMenu size="25px" />
         <img src={txLogo} alt="" />
         <h1>Testing Xperts</h1>
       </div>
