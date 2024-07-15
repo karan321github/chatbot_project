@@ -1,10 +1,20 @@
-import React from "react";
 import styles from "./SideWrapper.module.css";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const SideWrapper = () => {
+const SideWrapper = ({ isOpen, toggleSideWrapper }) => {
+  console.log(isOpen);
   return (
-    <div className={styles.chatSectionWrapper}>
+    <div
+      className={`${styles.chatSectionWrapper} ${
+        isOpen ? styles.open : styles.close
+      }`}
+    >
       <div className={styles.sidePanelWrapper}>
+        <div className={styles.GiHamburgerMenu}>
+          <button onClick={toggleSideWrapper}>
+            <GiHamburgerMenu size="20px" />
+          </button>
+        </div>
         <div className={styles.sidePanel}>
           <div className={styles.newConversation}>
             <button>New Conversation</button>

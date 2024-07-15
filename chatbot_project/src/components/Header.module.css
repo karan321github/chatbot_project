@@ -1,14 +1,38 @@
 .txHeader {
   display: flex;
+  position: absolute;
+  left: 300px;
+  width: -webkit-fill-available;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #eedfdf;
-  color: #000; /* Changed to black for better visibility */
+  color: #000;
+  transition: left 0.3s ease;
+}
+
+.shiftedHeader {
+  left: 300px;
+}
+
+.shiftedHeaderClose {
+  left: 0;
+}
+.txLogo {
+  display: flex;
+  align-items: center;
 }
 
 .txLogo img {
   height: 40px;
+  border: 1px solid red;
+  border-radius: 50px;
+  margin-left: 1.5rem;
+  padding: 0.1rem;
+}
+
+.txLogo h1 {
+  margin-left: 1rem;
 }
 
 .txNav {

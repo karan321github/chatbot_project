@@ -1,4 +1,4 @@
-.chatBodyWrapper {
+/* .chatBodyWrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -7,13 +7,11 @@
 }
 
 .chatBody {
-  flex: 1;
-  background-color: #fff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
   overflow-y: auto;
-  margin-bottom: 60px; /* Ensure space for the fixed input section */
+  margin-bottom: 60px; 
 }
 
 .chatBody h1 {
@@ -21,8 +19,11 @@
 }
 
 .chatSuggestion {
+  display: flex;
+  align-items: center;
+  background-color: #f7e1e1;
   margin-top: 20px;
-  /* Add styles for chat suggestions */
+ 
 }
 
 .inputSection {
@@ -30,12 +31,11 @@
   bottom: 0;
   left: 20px;
   right: 20px;
-  padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-radius: 30px;
 }
 
@@ -43,13 +43,13 @@
   flex: 1;
   padding: 0;
   border: none;
-  border-radius: 20px 0 0 20px; /* Rounded corners on the left side */
+  border-radius: 20px 0 0 20px; 
   resize: none;
   outline: none;
   font-size: 14px;
-  background-color: #f9f9f9;
-  height: 40px; /* Adjust height as needed */
-  padding-left: 10px; /* Add some padding inside the textarea */
+  background-color: #FFF0F5;
+  height: 3rem; 
+  padding-left: 10px; 
 }
 
 .buttonSection {
@@ -58,30 +58,130 @@
 }
 
 .attachButton {
-  background-color: black;
+  background-color: gray;
   color: white;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 0 20px 20px 0; /* Rounded corners on the right side */
+  padding: 14px;
+  border-radius: 0 20px 20px 0; 
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 110%;
 }
 
 .sendButton {
-  background-color: black;
+  background-color: gray;
   color: white;
   border: none;
   cursor: pointer;
   padding: 10px;
-  border-radius: 20px; /* Fully rounded */
+  border-radius: 20px; 
   margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px; /* Same height as textarea */
+  height: 40px; 
+}
+
+.sendButton:hover {
+  background-color: #333;
+}
+
+.attachButton img,
+.sendButton img {
+  width: 24px;
+  height: 24px;
+} */
+
+.chatBodyWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  padding-right: 0; /* Remove right padding to align with SideWrapper */
+  position: relative;
+}
+
+.chatBody {
+  flex: 1;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+  margin-bottom: 60px; /* Ensure space for the fixed input section */
+}
+
+.chatBody h1 {
+  margin-top: 5rem;
+  margin-bottom: 20px;
+}
+
+.chatSuggestion {
+  display: flex;
+  align-items: center;
+  background-color: #f7e1e1;
+  margin-top: 20px;
+}
+
+.inputSection {
+  position: fixed;
+  bottom: 2rem;
+  left: 300px; /* Align with the width of SideWrapper */
+  right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+  margin-left: 3rem;
+}
+
+.textarea {
+  flex: 1;
+  padding: 0;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  background-color: #fff0f5;
+  height: 3rem;
+  padding-left: 10px;
+  /* margin-left: 2rem; */
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+}
+
+.attachButton {
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  /* border-radius: 100px; */
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110%;
+}
+
+.sendButton {
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
 }
 
 .sendButton:hover {
