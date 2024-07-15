@@ -12,12 +12,18 @@
 }
 
 .shiftedHeader {
+<<<<<<< HEAD
   left: 300px;
 }
 
 .shiftedHeaderClose {
   left: 0;
 }
+=======
+  left: 0;
+}
+
+>>>>>>> ee009d67b238556c803c3526b4e90c8920d8308f
 .txLogo {
   display: flex;
   align-items: center;

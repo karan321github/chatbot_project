@@ -8,14 +8,21 @@
   transform: translateX(0);
 }
 
+<<<<<<< HEAD
 .close {
   /* width: 0px; */
   /* display: none; */
+=======
+.closed {
+>>>>>>> ee009d67b238556c803c3526b4e90c8920d8308f
   transform: translateX(-100%);
 }
 
 .GiHamburgerMenu {
+<<<<<<< HEAD
   padding: 20px;
+=======
+>>>>>>> ee009d67b238556c803c3526b4e90c8920d8308f
 }
 
 .sidePanelWrapper {
