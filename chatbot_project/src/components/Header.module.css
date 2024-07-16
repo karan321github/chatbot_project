@@ -6,24 +6,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #eedfdf;
+  /* background-color: #eedfdf; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #000;
   transition: left 0.3s ease;
 }
 
 .shiftedHeader {
-<<<<<<< HEAD
   left: 300px;
 }
 
 .shiftedHeaderClose {
   left: 0;
 }
-=======
-  left: 0;
-}
 
->>>>>>> ee009d67b238556c803c3526b4e90c8920d8308f
 .txLogo {
   display: flex;
   align-items: center;
