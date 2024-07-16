@@ -8,26 +8,19 @@
   transform: translateX(0);
 }
 
-<<<<<<< HEAD
 .close {
   /* width: 0px; */
   /* display: none; */
-=======
-.closed {
->>>>>>> ee009d67b238556c803c3526b4e90c8920d8308f
   transform: translateX(-100%);
 }
 
 .GiHamburgerMenu {
-<<<<<<< HEAD
   padding: 20px;
-=======
->>>>>>> ee009d67b238556c803c3526b4e90c8920d8308f
 }
 
 .sidePanelWrapper {
   width: 300px;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
   border-right: 1px solid #ddd;
 }
 
@@ -71,10 +64,18 @@
 }
 
 .filesList {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
 }
 
 .fileItem {
-  padding: 5px 0;
+  padding: 0.5rem ;
+}
+
+.fileItem:hover {
+  background-color: gainsboro;
+  border-radius: 0.3rem;
+
 }
