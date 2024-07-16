@@ -1,105 +1,10 @@
-/* .chatBodyWrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 20px;
-  position: relative;
-}
-
-.chatBody {
-  border-radius: 8px;
-  padding: 20px;
-  
-  overflow-y: auto;
-  margin-bottom: 60px; 
-}
-
-.chatBody h1 {
-  margin-bottom: 20px;
-}
-
-.chatSuggestion {
-  display: flex;
-  align-items: center;
-  background-color: #f7e1e1;
-  margin-top: 20px;
- 
-}
-
-.inputSection {
-  position: fixed;
-  bottom: 0;
-  left: 20px;
-  right: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  background-color: #f7f7f7;
-  border-radius: 30px;
-}
-
-.textarea {
-  flex: 1;
-  padding: 0;
-  border: none;
-  border-radius: 20px 0 0 20px; 
-  resize: none;
-  outline: none;
-  font-size: 14px;
-  background-color: #FFF0F5;
-  height: 3rem; 
-  padding-left: 10px; 
-}
-
-.buttonSection {
-  display: flex;
-  align-items: center;
-}
-
-.attachButton {
-  background-color: gray;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 14px;
-  border-radius: 0 20px 20px 0; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 110%;
-}
-
-.sendButton {
-  background-color: gray;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 20px; 
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px; 
-}
-
-.sendButton:hover {
-  background-color: #333;
-}
-
-.attachButton img,
-.sendButton img {
-  width: 24px;
-  height: 24px;
-} */
-
+/* 
 .chatBodyWrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
   padding: 20px;
-  padding-right: 0; /* Remove right padding to align with SideWrapper */
+  padding-right: 0; 
   position: relative;
 }
 
@@ -108,7 +13,7 @@
   border-radius: 8px;
   padding: 20px;
   overflow-y: auto;
-  margin-bottom: 60px; /* Ensure space for the fixed input section */
+  margin-bottom: 60px; 
 }
 
 .chatBody h1 {
@@ -126,7 +31,7 @@
 .inputSection {
   position: fixed;
   bottom: 2rem;
-  left: 300px; /* Align with the width of SideWrapper */
+  left: 300px; 
   right: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -148,7 +53,7 @@
   background-color: #fff0f5;
   height: 3rem;
   padding-left: 10px;
-  /* margin-left: 2rem; */
+ 
 }
 
 .buttonSection {
@@ -162,7 +67,7 @@
   border: none;
   cursor: pointer;
   padding: 14px;
-  /* border-radius: 100px; */
+ 
   border-radius: 0 20px 20px 0;
   display: flex;
   align-items: center;
@@ -192,4 +97,114 @@
 .sendButton img {
   width: 24px;
   height: 24px;
+} */
+
+.chatBodyWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.chatBody {
+  flex: 1;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 1050px;
+  /* background-color: #f1f1f1; */
+  transition: margin-top 0.3s ease;
+  position: relative;
+}
+
+.chatBody.sticky {
+  margin-top: 60px;
+}
+
+.chatBody h1 {
+  margin-top: 5rem;
+  margin-bottom: 20px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userMessage {
+  align-self: flex-end;
+  background-color: gainsboro;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 40%;
+  word-wrap: break-word;
+}
+
+.apiMessage {
+  align-self: flex-start;
+  /* background-color: #f8d7da; */
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.inputSection {
+  position: sticky;
+  bottom: 2rem;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.textarea {
+  flex: 1;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+}
+
+.attachButton {
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scrollbar styling */
+.chatBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatBody::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.chatBody::-webkit-scrollbar-track {
+  background: transparent;
 }
