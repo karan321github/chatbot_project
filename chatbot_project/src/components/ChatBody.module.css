@@ -100,11 +100,12 @@
 } */
 
 .chatBodyWrapper {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 120px);
   width: 100%;
   position: relative;
 }
@@ -116,8 +117,7 @@
   overflow-y: auto;
   text-align: center;
   width: 100%;
-  max-width: 1050px;
-  /* background-color: #f1f1f1; */
+  max-width: 800px;
   transition: margin-top 0.3s ease;
   position: relative;
 }
@@ -148,7 +148,6 @@
 
 .apiMessage {
   align-self: flex-start;
-  /* background-color: #f8d7da; */
   padding: 10px;
   border-radius: 10px;
   max-width: 80%;
@@ -165,7 +164,44 @@
   align-items: center;
   background-color: #f7f7f7;
   border-radius: 30px;
+  padding: 5px;
+}
+
+.typingIndicator {
   padding: 10px;
+  background-color: #060607;
+  border-radius: 18px;
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.typingIndicator span {
+  height: 8px;
+  width: 8px;
+  margin: 0 1px;
+  background-color: #93979b;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.typingIndicator span:nth-of-type(1) {
+  animation: 1s blink infinite 0.3333s;
+}
+
+.typingIndicator span:nth-of-type(2) {
+  animation: 1s blink infinite 0.6666s;
+}
+
+.typingIndicator span:nth-of-type(3) {
+  animation: 1s blink infinite 0.9999s;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
 }
 
 .textarea {
@@ -176,6 +212,8 @@
   outline: none;
   font-size: 14px;
   padding: 10px;
+  min-height: 38px;
+  max-height: 150px;
 }
 
 .buttonSection {
@@ -185,6 +223,18 @@
 
 .attachButton {
   background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachButtonHighlight {
+  background-color: black;
   color: white;
   border: none;
   cursor: pointer;
