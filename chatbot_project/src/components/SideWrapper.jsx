@@ -2,7 +2,7 @@ import styles from "./SideWrapper.module.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const SideWrapper = ({ isOpen, toggleSideWrapper }) => {
-  console.log(isOpen);
+  // console.log(isOpen);
   return (
     <div
       className={`${styles.chatSectionWrapper} ${
