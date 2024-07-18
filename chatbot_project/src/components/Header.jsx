@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiTalk } from "react-icons/gi";
 import { FaCircleUser } from "react-icons/fa6";
 import txLogo from "../assets/tx_logo.jpeg";
+import { FaChevronDown } from "react-icons/fa6";
 
-const Header = ({ isSideWrapperOpen, toggleSideWrapper }) => {
-  console.log(isSideWrapperOpen);
+const Header = ({ isSideWrapperOpen, toggleSideWrapper, openModal }) => {
+  console.log(openModal);
   return (
     <header
       className={`${styles.txHeader} ${
@@ -18,26 +19,19 @@ const Header = ({ isSideWrapperOpen, toggleSideWrapper }) => {
             <GiHamburgerMenu size="20px" />
           </button>
         )}
-        <img src={txLogo} alt="" />
-        <h1>Tx GPT</h1>
+        <div className={styles.toggleModal}>
+          <img src={txLogo} alt="" />
+          <h1>Tx GPT</h1>
+          <button onClick={openModal} className={styles.modalButton}>
+            <FaChevronDown />
+          </button>
+        </div>
       </div>
       <nav className={styles.txNav}>
         <ul className={styles.txNavList}>
-          <li>
-            <Link to="/">
-              <GiTalk color="green" size="30px" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
-              <GiTalk radius={"50px"} color="blue" size="30px" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact">
-              <FaCircleUser size="30px" color="gray" />
-            </Link>
-          </li>
+          <Link to="/contact">
+            <FaCircleUser size="30px" color="gray" />
+          </Link>
         </ul>
       </nav>
     </header>

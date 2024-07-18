@@ -33,6 +33,15 @@
   padding: 0.1rem;
 }
 
+.toggleModal {
+  display: flex;
+  align-items: center;
+}
+
+.toggleModal button {
+  margin-left: 0.5rem;
+}
+
 .txLogo h1 {
   margin-left: 1rem;
 }
