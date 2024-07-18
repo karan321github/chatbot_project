@@ -2,7 +2,8 @@ import styles from "./ChatBody.module.css";
 import { LuSend } from "react-icons/lu";
 import { useState, useEffect, useRef } from "react";
 
-const ChatBody = () => {
+
+const ChatBody = ({ isOpen , toggleSideWrapper }) => {
   const [valueForTextarea, setValueForTextArea] = useState("");
   const [messages, setMessages] = useState([]);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
@@ -47,13 +48,13 @@ const ChatBody = () => {
         setMessages([...messages, { type: "user", text: valueForTextarea }]);
         setValueForTextArea("");
         setTimeout(async () => {
-          setShowTypingIndicator(true); 
+          setShowTypingIndicator(true);
           const responseMessage = await simulateApiResponse(valueForTextarea);
           setMessages((prevMessages) => [
             ...prevMessages,
             { type: "api", text: responseMessage },
           ]);
-          setShowTypingIndicator(false); 
+          setShowTypingIndicator(false);
           scrollToTop();
         }, 500);
       }
@@ -68,7 +69,7 @@ const ChatBody = () => {
       setMessages([...messages, { type: "user", text: valueForTextarea }]);
       setValueForTextArea("");
       setTimeout(async () => {
-        setShowTypingIndicator(true); 
+        setShowTypingIndicator(true);
         scrollToTop();
 
         const responseMessage = await simulateApiResponse(valueForTextarea);
@@ -76,7 +77,7 @@ const ChatBody = () => {
           ...prevMessages,
           { type: "api", text: responseMessage },
         ]);
-        setShowTypingIndicator(false); 
+        setShowTypingIndicator(false);
         scrollToTop();
       }, 500); // Delay for effect
     }
@@ -119,7 +120,11 @@ const ChatBody = () => {
   }, []);
 
   return (
-    <div className={styles.chatBodyWrapper}>
+    <div
+      className={`${
+        isOpen ? styles.chatBodyWrapper : styles.chatBodyWrapperToggle
+      }`}
+    >
       <div
         className={`${styles.chatBody} ${isScrollingUp ? styles.sticky : ""}`}
         ref={chatBodyRef}
