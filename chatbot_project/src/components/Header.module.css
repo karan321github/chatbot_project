@@ -38,6 +38,15 @@
   align-items: center;
 }
 
+.toggleModal h1 {
+  padding: 5px;
+}
+
+.toggleModal h1:hover{
+  cursor: pointer;
+  background-color: rgb(228, 228, 228);
+}
+
 .toggleModal button {
   margin-left: 0.5rem;
 }
