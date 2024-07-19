@@ -2,24 +2,37 @@ import styles from "./ChatBody.module.css";
 import { LuSend } from "react-icons/lu";
 import { useState, useEffect, useRef } from "react";
 
-
-const ChatBody = ({ isOpen , toggleSideWrapper }) => {
+const ChatBody = ({ isOpen, toggleSideWrapper }) => {
   const [valueForTextarea, setValueForTextArea] = useState("");
   const [messages, setMessages] = useState([]);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [showTypingIndicator, setShowTypingIndicator] = useState(false);
   const chatBodyRef = useRef(null);
   const textareaRef = useRef(null);
+  const inputSectionRef = useRef(null);
 
   const handleChange = (e) => {
     setValueForTextArea(e.target.value);
+    autoResizeTextarea();
   };
 
   const autoResizeTextarea = () => {
-    if (textareaRef.current) {
+    if (textareaRef.current && inputSectionRef.current) {
+      const lineHeight = parseInt(
+        getComputedStyle(textareaRef.current).lineHeight
+      );
+      const minHeight = lineHeight; // Set to the height of one line
       textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height =
-        textareaRef.current.scrollHeight + "px";
+      textareaRef.current.style.height = `${Math.max(
+        minHeight,
+        textareaRef.current.scrollHeight
+      )}px`;
+
+      inputSectionRef.current.style.height = "auto";
+      inputSectionRef.current.style.height = `${Math.max(
+        minHeight,
+        textareaRef.current.scrollHeight
+      )}px`;
     }
   };
 
@@ -129,7 +142,6 @@ const ChatBody = ({ isOpen , toggleSideWrapper }) => {
         className={`${styles.chatBody} ${isScrollingUp ? styles.sticky : ""}`}
         ref={chatBodyRef}
       >
-        <h1>Thanks for trying Tx GPT</h1>
         <div className={styles.messages}>
           {messages.map((message, index) => (
             <div
@@ -150,7 +162,7 @@ const ChatBody = ({ isOpen , toggleSideWrapper }) => {
           )}
         </div>
       </div>
-      <div className={styles.inputSection}>
+      <div className={styles.inputSection} ref={inputSectionRef}>
         <textarea
           className={styles.textarea}
           placeholder="Type your message..."

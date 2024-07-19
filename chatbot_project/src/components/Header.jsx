@@ -23,7 +23,7 @@ const Header = ({ isSideWrapperOpen, toggleSideWrapper, openModal }) => {
           <img src={txLogo} alt="" />
           <h1>Tx GPT</h1>
           <button onClick={openModal} className={styles.modalButton}>
-            <FaChevronDown />
+            <FaChevronDown fontSize="10px" />
           </button>
         </div>
       </div>
