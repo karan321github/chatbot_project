@@ -4,37 +4,47 @@ import { useState, useEffect, useRef } from "react";
 
 const ChatBody = ({ isOpen, toggleSideWrapper }) => {
   const [valueForTextarea, setValueForTextArea] = useState("");
+  const [textAreaHeight, setTextAreaHeight] = useState("auto");
+  const [inputSectionHeight, setInputSectionHeight] = useState("auto");
   const [messages, setMessages] = useState([]);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [showTypingIndicator, setShowTypingIndicator] = useState(false);
   const chatBodyRef = useRef(null);
-  const textareaRef = useRef(null);
+  const textAreaRef = useRef(null);
   const inputSectionRef = useRef(null);
 
   const handleChange = (e) => {
     setValueForTextArea(e.target.value);
-    autoResizeTextarea();
   };
 
-  const autoResizeTextarea = () => {
-    if (textareaRef.current && inputSectionRef.current) {
-      const lineHeight = parseInt(
-        getComputedStyle(textareaRef.current).lineHeight
-      );
-      const minHeight = lineHeight; // Set to the height of one line
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${Math.max(
-        minHeight,
-        textareaRef.current.scrollHeight
-      )}px`;
-
-      inputSectionRef.current.style.height = "auto";
-      inputSectionRef.current.style.height = `${Math.max(
-        minHeight,
-        textareaRef.current.scrollHeight
-      )}px`;
-    }
+  const handleInput = () => {
+    const textArea = textAreaRef.current;
+    textArea.style.height = textArea.scrollHeight - 22;
+    setTextAreaHeight(`${textArea.scrollHeight}px`);
+    setInputSectionHeight(`${textArea.scrollHeight}px`);
+    console.log(textAreaHeight);
+    console.log(textArea.scrollHeight);
   };
+
+  // const autoResizeTextarea = () => {
+  //   if (textareaRef.current && inputSectionRef.current) {
+  //     const lineHeight = parseInt(
+  //       getComputedStyle(textareaRef.current).lineHeight
+  //     );
+  //     const minHeight = lineHeight; // Set to the height of one line
+  //     textareaRef.current.style.height = "auto";
+  //     textareaRef.current.style.height = `${Math.max(
+  //       minHeight,
+  //       textareaRef.current.scrollHeight
+  //     )}px`;
+
+  //     inputSectionRef.current.style.height = "auto";
+  //     inputSectionRef.current.style.height = `${Math.max(
+  //       minHeight,
+  //       textareaRef.current.scrollHeight
+  //     )}px`;
+  //   }
+  // };
 
   const scrollToTop = () => {
     if (chatBodyRef.current) {
@@ -121,15 +131,16 @@ const ChatBody = ({ isOpen, toggleSideWrapper }) => {
   }, [messages]);
 
   useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.addEventListener("input", autoResizeTextarea);
-    }
+    // if (textareaRef.current) {
+    //   textareaRef.current.addEventListener("input", autoResizeTextarea);
+    // }
+    handleInput();
 
-    return () => {
-      if (textareaRef.current) {
-        textareaRef.current.removeEventListener("input", autoResizeTextarea);
-      }
-    };
+    // return () => {
+    //   if (textareaRef.current) {
+    //     textareaRef.current.removeEventListener("input", autoResizeTextarea);
+    //   }
+    // };
   }, []);
 
   return (
@@ -162,14 +173,20 @@ const ChatBody = ({ isOpen, toggleSideWrapper }) => {
           )}
         </div>
       </div>
-      <div className={styles.inputSection} ref={inputSectionRef}>
+      <div
+        className={styles.inputSection}
+        ref={inputSectionRef}
+        style={{ height: inputSectionHeight }}
+      >
         <textarea
           className={styles.textarea}
           placeholder="Type your message..."
           onChange={handleChange}
           value={valueForTextarea}
+          onInput={handleInput}
           onKeyDown={handlePressEnter}
-          ref={textareaRef}
+          ref={textAreaRef}
+          style={{ height: textAreaHeight }}
         ></textarea>
         <div className={styles.buttonSection}>
           <button
